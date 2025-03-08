@@ -1,38 +1,112 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Overall body style */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  animation: fadeIn 1s ease;
+}
+
+h1 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Board styling */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+/* Square button style */
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Hover effect for squares */
+.square:hover {
+  background-color: #e7e7e7;
+  transform: scale(1.05);
+}
+
+/* Color for X and O */
+.square.x {
+  color: #4caf50; /* Green for X */
+}
+
+.square.o {
+  color: #ff5722; /* Orange for O */
+}
+
+/* Highlight winning squares */
+.square.winner {
+  background-color: #ffeb3b; /* Yellow for winning squares */
+  border-color: #fbc02d;
+}
+
+/* Status message style */
+.winner-message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* Button for restarting game */
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #4caf50;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
+/* Animations */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 400px) {
+  .app {
+    width: 90%;
   }
 }
